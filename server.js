@@ -18,7 +18,7 @@ const app = express()
 
 app.use(morgan("tiny"))
 app.use("/Poke", PokeRouter)
-
+app.use("/static", express.static("public"))
 
 // ROUTE
 
