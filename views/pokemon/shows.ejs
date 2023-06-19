@@ -1,0 +1,16 @@
+<h1>this is the show</h1>
+<%= Pokemon[id].name %>
+<img src="<%=Pokemon[id].img %>">
+<h3>Type</h3>
+<% for(let i = 0; i < Pokemon[id].type.length; i++){ %>  
+
+    <li><%= Pokemon[id].type[i] %></a></li>
+    
+<% } %> 
+<h3>Stats</h3>
+<li>HP: <%= Pokemon[id].stats.hp %></a></li>
+<li>Attack: <%= Pokemon[id].stats.attack %></a></li>
+<li>Defense: <%= Pokemon[id].stats.defense %></a></li>
+<li>Sp Attack: <%= Pokemon[id].stats.spattack %></a></li>
+<li>Sp Defense: <%= Pokemon[id].stats.spdefense %></a></li>
+<li>Speed: <%= Pokemon[id].stats.speed %></a></li>
