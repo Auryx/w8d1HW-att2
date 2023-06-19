@@ -2,7 +2,7 @@
 require("dotenv").config()
 const express = require("express")
 const morgan = require("morgan")
-const PokeRouter = require("./controllers/pokemon")
+const PokeRouter = require("./controllers/pokemon") // Connecting the controllers to the server
 
 // GLOBAL VARIABLES
 
@@ -17,8 +17,9 @@ const app = express()
 // MIDDLEWARE
 
 app.use(morgan("tiny"))
-app.use("/Poke", PokeRouter)
-app.use("/static", express.static("public"))
+app.use("/static", express.static("public")) // Connecting the CSS to the ejs files
+app.use(express.urlencoded({extended: true})) // parse html form data -> req.body
+app.use("/Poke", PokeRouter) // Connecting the controllers to the server (THIS GOES LAST)
 
 // ROUTE
 
