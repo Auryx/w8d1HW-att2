@@ -78,7 +78,10 @@ router.put("/:id", (req, res) => {
     }}
     // console.log(changedPoke)
     // res.json(changedPoke)
-    Pokemon[id] = changedPoke
+    Pokemon[id].id = changedPoke.id
+    Pokemon[id].name = changedPoke.name
+    Pokemon[id].type = changedPoke.type
+    Pokemon[id].stats = changedPoke.stats
     res.redirect("/poke")
 })
 

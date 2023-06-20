@@ -7,20 +7,28 @@
     <%- include("../partials/head.ejs") %>
 </head>
 <body>
-    <h1>Form to Update <%= Pokemon[id].name%></h1>
+    <h1 class="header">Update <%= Pokemon[id].name%></h1>
     <form action="/poke/<%= id %>?_method=PUT" method="post">
-        <input type="text" name="id" placeholder="Suggested ID: <%= Pokemon.length + 1 %>" value="<%= Pokemon[id].id%>">
-        <input type="text" name="name" placeholder="Name" value="<%= Pokemon[id].name%>">
-        <input type="text" name="type" placeholder="Type" value="<%= Pokemon[id].type[0]%>">
-        <input type="text" name="type2" placeholder="2nd Type" value="<%= Pokemon[id].type[1]%>">
-        <input type="text" name="hp" placeholder="HP" value="<%= Pokemon[id].stats.hp %>">
-        <input type="text" name="attack" placeholder="Attack" value="<%= Pokemon[id].stats.attack %>">
-        <input type="text" name="defense" placeholder="Defense" value="<%= Pokemon[id].stats.defense %>">
-        <input type="text" name="spattack" placeholder="Sp Attack" value="<%= Pokemon[id].stats.spattack %>">
-        <input type="text" name="spdefense" placeholder="Sp Defense" value="<%= Pokemon[id].stats.spdefense %>">
-        <input type="text" name="speed" placeholder="Speed" value="<%= Pokemon[id].stats.speed %>">
+        <div class="stats">
+            <input type="text" name="id" placeholder="Suggested ID: <%= Pokemon.length + 1 %>" value="<%= Pokemon[id].id%>">
+            <input type="text" name="name" placeholder="Name" value="<%= Pokemon[id].name%>">
+        </div>
+        <div class="stats">
+            <input type="text" name="type" placeholder="Type" value="<%= Pokemon[id].type[0]%>">
+            <input type="text" name="type2" placeholder="2nd Type" value="<%= Pokemon[id].type[1]%>">
+        </div>
+        <div class="stats">
+            <input type="text" name="hp" placeholder="HP" value="<%= Pokemon[id].stats.hp %>">
+            <input type="text" name="attack" placeholder="Attack" value="<%= Pokemon[id].stats.attack %>">
+            <input type="text" name="defense" placeholder="Defense" value="<%= Pokemon[id].stats.defense %>">
+            <input type="text" name="spattack" placeholder="Sp Attack" value="<%= Pokemon[id].stats.spattack %>">
+            <input type="text" name="spdefense" placeholder="Sp Defense" value="<%= Pokemon[id].stats.spdefense %>">
+            <input type="text" name="speed" placeholder="Speed" value="<%= Pokemon[id].stats.speed %>">
+        </div>
+        <div class="stats">
         <input type="submit" value="Update Pokemon">
     </form>
-    <a href="/poke/<%= id %>"><button>Back</button></a>
+        <a href="/poke/<%= id %>"><button>Back</button></a>
+</div>
 </body>
 </html>

@@ -8,14 +8,17 @@
 </head>
 <body>
     <div class="header">
-        <h1>Welcome to the Pokedex</h1>
-        <a href="/poke/new">Add a Pokemon!</a>
+        <div><h1>Welcome to the Pokedex</h1></div>
+        <div><a href="/poke/new"><button>Add a Pokemon</button></a></div>
     </div>
-    <div class="pkImages">
-        <ul>
+    <div class="container">
+        <ul class="noLikeyDots">
             <% for(let i = 0; i < Pokemon.length; i++){ %>
-    
-                <li><a href="/poke/<%= i %>"><img src="<%= Pokemon[i].img %>"></a></li>
+                
+                <div class="pokeCard">
+                    <li><h3><%= Pokemon[i].name %></h3></a></li>
+                    <li><a href="/poke/<%= i %>"><img src="<%= Pokemon[i].img %>"></a></li>
+                </div>
     
             <% } %>
         </ul>
