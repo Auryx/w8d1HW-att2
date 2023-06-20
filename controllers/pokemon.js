@@ -83,6 +83,15 @@ router.put("/:id", (req, res) => {
 })
 
 
+// destroy
+router.delete("/:id", async (req, res) => {
+    const id = req.params.id
+    Pokemon.splice(id, 1)
+    res.redirect("/poke")
+})
+
+
+
 // show
 
 router.get("/:id", (req, res) => {
@@ -91,6 +100,8 @@ router.get("/:id", (req, res) => {
     console.log(id)
     res.render("pokemon/shows.ejs", {Pokemon, id})
 })
+
+
 // export
 
 module.exports = router
