@@ -59,7 +59,8 @@ router.get("/:id/edit", (req, res) => {
 
 // update -> put
 
-router.put("/", (req, res) => {
+router.put("/:id", (req, res) => {
+    const id = req.params.id
     const changedPoke = {
         id: req.body.id,
         name: req.body.name,
@@ -75,8 +76,10 @@ router.put("/", (req, res) => {
             spdefense: req.body.spdefense,
             speed: req.body.speed
     }}
-    console.log(changedPoke)
-    res.json(changedPoke)
+    // console.log(changedPoke)
+    // res.json(changedPoke)
+    Pokemon[id] = changedPoke
+    res.redirect("/poke")
 })
 
 
