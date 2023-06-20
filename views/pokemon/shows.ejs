@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shows</title>
+    <title><%= Pokemon[id].name %></title>
     <%- include("../partials/head.ejs") %>
 </head>
 <body>
@@ -22,7 +22,9 @@
     <li>Sp Attack: <%= Pokemon[id].stats.spattack %></a></li>
     <li>Sp Defense: <%= Pokemon[id].stats.spdefense %></a></li>
     <li>Speed: <%= Pokemon[id].stats.speed %></a></li>
-
+    
+    <a href="/poke/<%= id %>/edit"><button>Edit</button></a>
+    
     <a href="/poke">Back</a>
 </body>
 </html>
