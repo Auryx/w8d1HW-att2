@@ -30,6 +30,7 @@ router.post("/", (req, res) => {
     const newPoke = {
         id: req.body.id,
         name: req.body.name,
+        img: req.body.img,
         type: [
             req.body.type,
             req.body.type2
@@ -64,6 +65,7 @@ router.put("/:id", (req, res) => {
     const changedPoke = {
         id: req.body.id,
         name: req.body.name,
+        img: req.body.img,
         type: [
             req.body.type,
             req.body.type2
@@ -80,8 +82,10 @@ router.put("/:id", (req, res) => {
     // res.json(changedPoke)
     Pokemon[id].id = changedPoke.id
     Pokemon[id].name = changedPoke.name
+    Pokemon[id].img = changedPoke.img
     Pokemon[id].type = changedPoke.type
     Pokemon[id].stats = changedPoke.stats
+    console.log(Pokemon[id].name, Pokemon[id].img)
     res.redirect("/poke")
 })
 
@@ -99,8 +103,8 @@ router.delete("/:id", async (req, res) => {
 
 router.get("/:id", (req, res) => {
     const id = req.params.id
-    console.log(Pokemon[id])
-    console.log(id)
+    // console.log(Pokemon[id])
+    // console.log(id)
     res.render("pokemon/shows.ejs", {Pokemon, id})
 })
 
